@@ -1,24 +1,34 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import Composition from "../views/Composition/Composition.vue";
+import ScopedSlot from "../views/ScopedSlot/ScopedSlot.vue";
+import Mixin from "../views/Mixin/Mixin.vue";
+import RenderProp from "../views/RenderProp/RenderProp.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "home",
     component: Home
   },
   {
-    path: "/about",
-    name: "about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
-  }
+    path: "/composition",
+    component: Composition
+  },
+  {
+    path: "/scoped-slot",
+    component: ScopedSlot
+  },
+  {
+    path: "/mixin",
+    component: Mixin
+  },
+  {
+    path: "/render-prop",
+    component: RenderProp
+  },
 ];
 
 const router = new VueRouter({
